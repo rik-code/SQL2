@@ -6,10 +6,10 @@ CREATE TABLE IF NOT EXISTS subjects (
 CREATE TABLE IF NOT EXISTS students (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL UNIQUE,
-    age TEXT,
+    birth_date TEXT NOT NULL,
     mark REAL NOT NULL DEFAULT 5.0,
-    subjects_id INTEGER,
+    subject_id INTEGER,
     status TEXT DEFAULT 'pay',
 
-    FOREIGN KEY (subjects_id) REFERENCES subjects (id)
+    FOREIGN KEY (subject_id) REFERENCES subjects (id)
 );
